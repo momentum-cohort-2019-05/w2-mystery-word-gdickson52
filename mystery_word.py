@@ -25,23 +25,23 @@ with open("words.txt") as words_file:
 # program function
 def pick_diff():
     """let player pick and confirm a difficulty level."""
-    prompt = "pick a difficulty.  (easy, normal, hard)\n>"
+    prompt = "Please select a difficulty.  (easy, normal, hard)\n>"
     choice = "" 
     while choice not in ['easy', 'normal', 'hard'] :
-        choice = input(prompt)
+        choice = raw_input(prompt)
         choice = choice.lower()
     change_diff(choice)
 
 def change_diff(level):
     """allow the player a chance to change difficulty."""
-    message = "\nyou picked " + level + ". do you want to change level? [Y/N]\n>"
-    answer = input(message).lower()
+    message = "\nyou picked " + level + ". Do you want to change level? [Y/N]\n>"
+    answer = raw_input(message).lower()
     while answer not in ['y', 'n']:
-        answer = input (message). lower()
+        answer = raw_input (message). lower()
     if answer == 'y':
         pick_diff()
     if answer == 'n':
-        print("\nready to play\n")
+        print("\nReady to play\n")
         choose_word(level)
 
 def choose_word(choice):
@@ -69,7 +69,7 @@ def play_game(this_word):
         print("guessed letters: ") 
         print(" , ".join(guessed))
 
-        letter = input("your guess:").lower()
+        letter = raw_input("your guess:").lower()
         if len (letter) ==1 and letter.isalpha():
             if letter in guessed:
                 print("\n\nyou already guessed that")
@@ -90,7 +90,7 @@ def play_game(this_word):
             print("\nsorry " + player + ", game over\nyour word was " + ''.join(word) + ".")
 
 # Introduction, explanation of game.
-player = input("lets play mystery word! ")
+player = raw_input("lets play mystery word! ")
 print("\nhey, " + player + " !\nyou get 8 incorrect guesses before you lose."
       "\nwhich difficulty would you like?"
       "\n easy_mode"
