@@ -28,16 +28,16 @@ def pick_diff():
     prompt = "Please select a difficulty.  (easy, normal, hard)\n>"
     choice = "" 
     while choice not in ['easy', 'normal', 'hard'] :
-        choice = raw_input(prompt)
+        choice = input(prompt)
         choice = choice.lower()
     change_diff(choice)
 
 def change_diff(level):
     """allow the player a chance to change difficulty."""
     message = "\nyou picked " + level + ". Do you want to change level? [Y/N]\n>"
-    answer = raw_input(message).lower()
+    answer = input(message).lower()
     while answer not in ['y', 'n']:
-        answer = raw_input (message). lower()
+        answer = input (message). lower()
     if answer == 'y':
         pick_diff()
     if answer == 'n':
@@ -69,7 +69,7 @@ def play_game(this_word):
         print("guessed letters: ") 
         print(" , ".join(guessed))
 
-        letter = raw_input("your guess:").lower()
+        letter = input("your guess:").lower()
         if len (letter) ==1 and letter.isalpha():
             if letter in guessed:
                 print("\n\nyou already guessed that")
@@ -90,7 +90,7 @@ def play_game(this_word):
             print("\nsorry " + player + ", game over\nyour word was " + ''.join(word) + ".")
 
 # Introduction, explanation of game.
-player = raw_input("lets play mystery word! ")
+player = input("lets play mystery word! ")
 print("\nhey, " + player + " !\nyou get 8 incorrect guesses before you lose."
       "\nwhich difficulty would you like?"
       "\n easy_mode"
