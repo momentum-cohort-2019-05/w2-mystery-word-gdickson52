@@ -72,7 +72,7 @@ def play_game(this_word):
         letter = input("your guess:").lower()
         if len (letter) ==1 and letter.isalpha():
             if letter in guessed:
-                print("\n\nyou already guessed that")
+                print("\n\nHey you already guessed that")
             elif letter in word:
                 for index, character in enumerate(word):
                     blanks = list(blanks)
